@@ -19,6 +19,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * @className: MainActivity
+ * @classDescription: 一个广告轮播图Demo
+ * @author: miao
+ * @createTime: 2017年2月20日
+ */
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.cycleview)
@@ -53,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
         initView();
     }
 
+    /**
+     * initView 加载轮播图，轮播图相关设置
+     * @author miao
+     * @createTime 2017年2月20日
+     * @lastModify 2017年2月20日
+     * @param
+     * @return
+     */
     private void initView() {
 
         //设置数据
@@ -63,13 +77,13 @@ public class MainActivity extends AppCompatActivity {
         //判空容错
         if (cycleview == null)
             return ;
-        // 设置显示方式（居中,内边距离下24dp）
+        //设置显示方式（居中,内边距离下24dp）
         cycleview.setAlignParentCenter(24);
         //设置为有轮播功能
         cycleview.setIsHasWheel(true);
-        // 设置轮播时间为3000毫秒
+        //设置轮播时间为3000毫秒
         cycleview.setDelay(3000);
-        // 设置数据源并设置监听
+        //设置数据源并设置监听
         cycleview.setData(mData, this, new CycleView.CycleViewListener() {
             @Override
             public void onItemClick(int position) {
